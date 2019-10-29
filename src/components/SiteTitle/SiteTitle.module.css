@@ -1,0 +1,15 @@
+.SiteTitle {
+  display: block;
+  text-align: left;
+  padding-top: 100px;
+  padding-left: 2rem;
+  box-sizing: border-box;
+}
+
+.SiteTitle h1 {
+  margin-bottom: 10px;
+}
+
+.SiteTitle h4 {
+  margin-top: 0;
+}

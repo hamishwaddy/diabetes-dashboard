@@ -1,0 +1,59 @@
+.Wrapper {
+  box-sizing: border-box;
+  margin-top: 56px;
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 3fr 1fr;
+  border: 3px solid black;
+}
+
+.Content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr auto auto;
+}
+
+.Right {
+  display: flex;
+  flex-direction: column;
+}
+
+.SiteTitle {
+  grid-row: 1 / 2;
+  grid-column: 1 / 4;
+}
+
+.PatientProfileCard {
+  width: 100%;
+}
+
+.Options {
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
+  /* grid-template-columns: minmax(550px, 1fr); */
+}
+
+.Chart {
+  grid-row: 3 / 5;
+  grid-column: 1 / 4;
+}
+
+/* ALL PHONES & TABLETS */
+@media (max-width: 768px) {
+  .Right {
+    display: none;
+  }
+
+  .Wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Options Cards show display as 1fr column at 550px => NOT WORKING! */
+/* @media (max-width: 550px) {
+  .Options {
+    grid-template-columns: 1fr;
+  }
+} */

@@ -1,0 +1,28 @@
+.SidePanel {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(1, 22, 39, 0.2),
+    0 6px 20px 0 rgba(1, 22, 39, 0.19);
+  text-align: center;
+  border-radius: 10px;
+  background-color: #fdfffc;
+  padding: 1px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.SidePanel p {
+  font-size: 1em;
+  color: var(--blue);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+}
+
+.Icon {
+  font-size: 80px;
+  color: var(--blue);
+}

@@ -1,0 +1,11 @@
+.CardContainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+/* @media (maxwidth: 550px) {
+  .CardContainer {
+    grid-template-columns: 1fr;
+  }
+} */

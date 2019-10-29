@@ -9,13 +9,17 @@ import SiteTitle from '../../components/SiteTitle/SiteTitle'
 import PatientProfileCard from '../../components/PatientProfileCard/PatientProfileCard'
 import CardContainer from '../../components/UI/Card/CardContainer/CardContainer'
 import SidePanel from '../../components/UI/SidePanel/SidePanel'
-import Chart from '../../components/Chart/Chart'
+import ChartContainer from '../../components/Chart/ChartContainer/ChartContainer'
 
 class Layout extends Component {
-  state = {
-    showSideDrawer: false,
-    date: moment().format('ll')
+  constructor(props) {
+    super(props)
+    this.state = {
+      showSideDrawer: false,
+      date: moment().format('ll')
+    }
   }
+
 
   sideDrawerClosedHandler = () => {
     this.setState({ showSideDrawer: false })
@@ -46,8 +50,9 @@ class Layout extends Component {
             <div className={classes.Options}>
               <CardContainer />
             </div>
-            <Chart
-              className={classes.Chart} />
+            <ChartContainer
+              className={classes.Chart}
+              chartTitle="Blood Glucose Values: Last 24 Hours" />
           </main>
           <div className={classes.Right}>
             <div className={classes.PatientProfileCard}>

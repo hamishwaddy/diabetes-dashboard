@@ -1,0 +1,12 @@
+.Chart {
+  max-height: 80px;
+  width: 75%;
+}
+
+.Chart canvas {
+  position: relative;
+  padding-left: 32px;
+  padding-right: 16px;
+  padding-top: 44px;
+  justify-self: flex-end;
+}

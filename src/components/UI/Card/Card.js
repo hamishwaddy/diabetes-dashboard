@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './Card.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Bg3HourTrend from '../../Chart/Bg3HourTrend/Bg3HourTrend'
 
 const Card = (props) => {
   return (
@@ -12,8 +13,9 @@ const Card = (props) => {
         <p>{props.Title}</p>
       </div>
       <div className={classes.CardData}>
-        <p>{props.Data}</p>
+        {props.Graphic}
       </div>
+      <p className={classes.Description}>{props.Description}</p>
     </div>
   )
 }

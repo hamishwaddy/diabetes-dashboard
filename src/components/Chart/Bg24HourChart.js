@@ -11,8 +11,8 @@ class Bg24HourChart extends Component {
 
     this.state = {
       baseUrl: 'https://orriebetes.herokuapp.com/api/v1/',
-      chartData: {}
-
+      chartData: {},
+      chartOptions: {}
     }
   }
 
@@ -38,28 +38,47 @@ class Bg24HourChart extends Component {
         labels.reverse()
         data.reverse()
 
-        console.log(labels)
-        console.log(data)
-
         this.setState({
           chartData: {
             labels: labels,
             datasets: [{
               label: 'BG Numbers',
-              data: data
+              backgroundColor: 'rgba(46, 196, 182, 1)',
+              borderColor: '#ff9f1c',
+              pointRadius: 1,
+              pointBackgroundColor: '#ff9f1c',
+              showLine: true,
+              data: data,
             }],
-            options: {
-              scales: {
-                yAxes: [
-                  {
-                    ticks: {
-                      min: 0,
-                      max: 25
-                    }
-                  }
-                ]
-              }
+          },
+          chartOptions: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+              display: false
             },
+            scales: {
+              xAxes: [
+                {
+                  ticks: {
+                    display: true,
+                    autoSkip: true,
+                    maxTicksLimit: 12
+                  }
+                }
+              ],
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true,
+                    max: 24,
+                    min: 0,
+                    stepSize: 2
+                  },
+                  display: true,
+                }
+              ]
+            }
           }
         })
       })
@@ -70,7 +89,10 @@ class Bg24HourChart extends Component {
     return (
       <div className={classes.ChartContainer}>
         <Line
-          data={this.state.chartData} />
+          data={this.state.chartData}
+          options={this.state.chartOptions}
+          width="450"
+          height="250" />
       </div>
     )
   }

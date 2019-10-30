@@ -2,7 +2,7 @@
   display: grid;
   grid-template-rows: 52px 1fr;
   width: 100%;
-  min-height: 300px;
+  min-height: 450px;
   grid-column: 1 / -1;
   box-shadow: 0 4px 8px 0 rgba(1, 22, 39, 0.2),
     0 6px 20px 0 rgba(1, 22, 39, 0.19);

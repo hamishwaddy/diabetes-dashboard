@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './CardContainer.module.css'
 import Card from '../Card'
+import Bg3HourTrend from '../../../Chart/Bg3HourTrend/Bg3HourTrend'
 
 const CardContainer = (props) => {
   return (
@@ -8,15 +9,18 @@ const CardContainer = (props) => {
       <Card
         Icon="tint"
         Title="Blood Glucose"
-        Data="some data" />
+        Graphic={<Bg3HourTrend />}
+        Description="3 Hour Trend" />
       <Card
         Icon="syringe"
         Title="Insulin"
-        Data="Ave TDD" />
+        Data="Ave TDD"
+        Description="Ave Total Daily Dose" />
       <Card
         Icon="check-double"
         Title="Success"
-        Data="something" />
+        Data="something"
+        Description="some cool data" />
     </div>
   )
 }

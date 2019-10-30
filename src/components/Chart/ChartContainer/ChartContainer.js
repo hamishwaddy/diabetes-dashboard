@@ -4,6 +4,11 @@ import Bg24HourChart from '../Bg24HourChart'
 
 import classes from './ChartContainer.module.css'
 
+// -- Chart Style Options -- //
+// Chart.defaults.global.defaultFontFamily = "Montserrat"
+// Chart.defaults.global.legend.display = false
+// Chart.defaults.global.elements.line.tension = 1
+
 class ChartContainer extends Component {
   constructor(props) {
     super(props);
@@ -16,11 +21,11 @@ class ChartContainer extends Component {
   }
 
   componentDidMount() {
-    // window.setInterval(() => {
-    //   this.setState({
-    //     chartData: this.props.data
-    //   })
-    // }, 5000)
+    window.setInterval(() => {
+      this.setState({
+        chartData: this.props.data
+      })
+    }, 5000)
   }
 
 

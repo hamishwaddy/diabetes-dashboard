@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import { Line } from 'react-chartjs-2'
 import axios from 'axios'
+import moment from 'moment'
 
 import classes from './Bg24HourChart.module.css'
 
 class Bg24HourChart extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
-      chartData: props.chartData,
       baseUrl: 'https://orriebetes.herokuapp.com/api/v1/',
-      chartTitle: 'Blood Glucose: Last 24 Hours'
+      chartData: {}
+
     }
   }
 
@@ -20,8 +21,62 @@ class Bg24HourChart extends Component {
   }
 
   getChartData() {
+    axios
+      .get(this.state.baseUrl + 'entries.json?count=288')
+      .then(res => {
+        let labels = []
+        let data = []
+        let mmolValue, sgvValue, sysTime, formattedTime
+        for (var i = 0; i < res.data.length; i++) {
+          sysTime = res.data[i].sysTime
+          formattedTime = moment.utc(sysTime).local().format('HH:mm')
+          labels.push(formattedTime)
+          sgvValue = (res.data[i].sgv)
+          mmolValue = (sgvValue / 18).toFixed(1)
+          data.push(mmolValue)
+        }
+        labels.reverse()
+        data.reverse()
 
+        console.log(labels)
+        console.log(data)
+
+        this.setState({
+          chartData: {
+            labels: labels,
+            datasets: [{
+              label: 'BG Numbers',
+              data: data
+            }],
+            options: {
+              scales: {
+                yAxes: [
+                  {
+                    ticks: {
+                      min: 0,
+                      max: 25
+                    }
+                  }
+                ]
+              }
+            },
+          }
+        })
+      })
+      .catch(err => console.error(err));
   }
+
+  render() {
+    return (
+      <div className={classes.ChartContainer}>
+        <Line
+          data={this.state.chartData} />
+      </div>
+    )
+  }
+}
+
+export default Bg24HourChart
 
   // getChartData() {
   //   axios
@@ -49,7 +104,7 @@ class Bg24HourChart extends Component {
 
 
 
-  render() {
+  // render() {
     // const data = this.state.chartData
     // console.log('render(): ' + chartData)
 
@@ -116,14 +171,4 @@ class Bg24HourChart extends Component {
     //   }
     // }
     // this.setState({ data: this.state.data })
-    return (
-      <div className={classes.ChartContainer}>
-        <Line
-          data={this.state.chartData}
-          options={{}} />
-      </div>
-    )
-  }
-}
 
-export default Bg24HourChart

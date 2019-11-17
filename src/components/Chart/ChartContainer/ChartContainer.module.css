@@ -41,3 +41,19 @@
   font-size: 1em;
   font-weight: 700;
 }
+
+ul {
+  list-style: none;
+  margin: auto;
+  padding: 0;
+}
+
+li {
+  margin: 8px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+li .active {
+  color: var(--grey);
+}

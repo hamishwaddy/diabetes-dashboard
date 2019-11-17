@@ -1,9 +1,9 @@
 .Wrapper {
   box-sizing: border-box;
   margin-top: 56px;
-  padding: 16px;
+  padding: 32px;
   display: grid;
-  gap: 16px;
+  gap: 32px;
   grid-template-columns: 3fr 1fr;
   border: 3px solid black;
 }

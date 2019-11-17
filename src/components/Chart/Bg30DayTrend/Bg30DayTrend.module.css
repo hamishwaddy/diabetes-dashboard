@@ -1,0 +1,15 @@
+.ChartContainer {
+  position: relative;
+  grid-column: 1 / -1;
+  margin: auto;
+  height: auto;
+  width: 60vw;
+  padding-top: 16px;
+  padding-bottom: 32px;
+}
+
+@media (max-width: 768px) {
+  .ChartContainer {
+    width: 80%;
+  }
+}

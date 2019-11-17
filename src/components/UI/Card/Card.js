@@ -1,7 +1,6 @@
 import React from 'react'
 import classes from './Card.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Bg3HourTrend from '../../Chart/Bg3HourTrend/Bg3HourTrend'
 
 const Card = (props) => {
   return (

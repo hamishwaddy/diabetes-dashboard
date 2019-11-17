@@ -52,7 +52,7 @@ class Layout extends Component {
             </div>
             <ChartContainer
               className={classes.Chart}
-              chartTitle="Blood Glucose Values: Last 24 Hours" />
+              chartTitle="Chart title goes here" />
           </main>
           <div className={classes.Right}>
             <div className={classes.PatientProfileCard}>

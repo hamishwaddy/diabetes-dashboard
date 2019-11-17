@@ -3,9 +3,9 @@ import { Line } from 'react-chartjs-2'
 import axios from 'axios'
 import moment from 'moment'
 
-import classes from './Bg3HourTrend.module.css'
+import classes from './Bg30DayTrend.module.css'
 
-class Bg3HourTrend extends Component {
+class Bg30DayTrend extends Component {
   constructor(props) {
     super(props)
 
@@ -13,7 +13,7 @@ class Bg3HourTrend extends Component {
       baseUrl: 'https://orriebetes.herokuapp.com/api/v1/',
       chartData: {},
       chartOptions: {},
-      chartTitle: '3 Hour Trend'
+      chartTitle: '...BG 4 Day Trend...'
     }
   }
 
@@ -23,14 +23,15 @@ class Bg3HourTrend extends Component {
 
   getChartData() {
     axios
-      .get(this.state.baseUrl + 'entries.json?count=36')
+      .get(this.state.baseUrl + 'entries.json?count=1058') //8640
       .then(res => {
         let labels = []
         let data = []
         let mmolValue, sgvValue, sysTime, formattedTime
         for (var i = 0; i < res.data.length; i++) {
+          //console.log(res.data)
           sysTime = res.data[i].sysTime
-          formattedTime = moment.utc(sysTime).local().format('HH:mm')
+          formattedTime = moment.utc(sysTime).local().format('dddd - HH:mm')
           labels.push(formattedTime)
           sgvValue = (res.data[i].sgv)
           mmolValue = (sgvValue / 18).toFixed(1)
@@ -43,8 +44,8 @@ class Bg3HourTrend extends Component {
           chartData: {
             labels: labels,
             datasets: [{
-              label: 'Last 3 Hours',
-              backgroundColor: 'transparent',
+              label: 'BG Numbers',
+              backgroundColor: 'rgba(231, 29, 54, 0.8)',
               borderColor: '#e71d36',
               pointRadius: 1,
               pointBackgroundColor: '#e71d36',
@@ -61,20 +62,22 @@ class Bg3HourTrend extends Component {
             scales: {
               xAxes: [
                 {
-                  gridLines: {
-                    display: false
-                  },
                   ticks: {
-                    display: false,
+                    display: true,
+                    autoSkip: true,
+                    maxTicksLimit: 14
                   }
                 }
               ],
               yAxes: [
                 {
                   ticks: {
-                    display: false,
+                    beginAtZero: true,
+                    max: 24,
+                    min: 0,
+                    stepSize: 2
                   },
-                  display: false,
+                  display: true,
                 }
               ]
             }
@@ -86,15 +89,16 @@ class Bg3HourTrend extends Component {
 
   render() {
     return (
-      <div className={classes.Chart}>
+      <div
+        className={classes.ChartContainer}>
         <Line
           data={this.state.chartData}
           options={this.state.chartOptions}
-          width={100}
-          height={35} />
-      </div>
+          width="450"
+          height="250" />
+      </div >
     )
   }
 }
 
-export default Bg3HourTrend
+export default Bg30DayTrend

@@ -1,4 +1,8 @@
-![alt text](https://github.com/hamishwaddy/diabetes-dashboard/src/assets/images/iDotLogo.png 'iDot Tracker Logo')
+# iDot Tracker
+
+### Dashboard app
+
+This repository contains the iDot Tracker web dashboard app. It is part of the final submission for my GENR 7101 Industry Project.
 
 To run this project follow the instructions below:
 

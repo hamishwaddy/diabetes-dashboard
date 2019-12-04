@@ -45,9 +45,9 @@ class Bg3HourTrend extends Component {
             datasets: [{
               label: 'Last 3 Hours',
               backgroundColor: 'transparent',
-              borderColor: '#e71d36',
+              borderColor: '#d4d4d4',
               pointRadius: 1,
-              pointBackgroundColor: '#e71d36',
+              pointBackgroundColor: '#ececec',
               showLine: true,
               data: data,
             }],

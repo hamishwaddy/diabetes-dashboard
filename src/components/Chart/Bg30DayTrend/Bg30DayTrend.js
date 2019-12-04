@@ -45,10 +45,10 @@ class Bg30DayTrend extends Component {
             labels: labels,
             datasets: [{
               label: 'BG Numbers',
-              backgroundColor: 'rgba(231, 29, 54, 0.8)',
-              borderColor: '#e71d36',
+              backgroundColor: '#ececec',
+              borderColor: '#d4d4d4',
               pointRadius: 1,
-              pointBackgroundColor: '#e71d36',
+              pointBackgroundColor: '#d4d4d4',
               showLine: true,
               data: data,
             }],

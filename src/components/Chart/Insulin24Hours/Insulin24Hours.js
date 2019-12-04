@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Line } from 'react-chartjs-2'
 
+import axios from 'axios'
 
 class Insulin24Hours extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class Insulin24Hours extends Component {
     axios
       .get(this.state.baseUrl + 'treatments.json?count=4')
       .then(res => {
-        let labels = []
+        // let labels = []
         let data = []
         let tdd = 0
         console.log(res.data);

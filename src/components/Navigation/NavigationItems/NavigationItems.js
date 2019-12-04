@@ -11,6 +11,7 @@ const NavigationItems = (props) => {
         <NavigationItem link='/insuln'>INSULIN</NavigationItem>
         <NavigationItem link='/carbs'>CARBS</NavigationItem>
         <NavigationItem link='/basal'>BASAL</NavigationItem>
+        <NavigationItem link='/auth'>AUTHENTICATE</NavigationItem>
       </ul>
       {/*<Route path="/" exact component={Bg24HourChart} />*/}
     </Fragment>

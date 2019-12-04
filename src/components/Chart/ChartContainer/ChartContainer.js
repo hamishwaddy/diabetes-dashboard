@@ -7,11 +7,6 @@ import Bg30DayTrend from '../Bg30DayTrend/Bg30DayTrend'
 
 import classes from './ChartContainer.module.css'
 
-// -- Chart Style Options -- //
-// Chart.defaults.global.defaultFontFamily = "Montserrat"
-// Chart.defaults.global.legend.display = false
-// Chart.defaults.global.elements.line.tension = 1
-
 class ChartContainer extends Component {
   constructor(props) {
     super(props);
@@ -44,19 +39,20 @@ class ChartContainer extends Component {
           <ul>
             <li>
               <NavLink to="/bg24hour">24 HOURS</NavLink>
+            </li>         
+            
+            <li>
+              <NavLink to="/bg2day">2 DAYS</NavLink>
             </li>
             <li>
-              <NavLink to="/bg7day">2 DAYS</NavLink>
-            </li>
-            <li>
-              <NavLink to="/bg30day">4 DAYS</NavLink>
+              <NavLink to="/bg4day">4 DAYS</NavLink>
             </li>
           </ul>
         </nav>
         <Route path="/" exact component={Bg24HourChart} />
         <Route path="/bg24hour" component={Bg24HourChart} />
-        <Route path="/bg7day" component={Bg7DayTrend} />
-        <Route path="/bg30day" component={Bg30DayTrend} />
+        <Route path="/bg2day" component={Bg7DayTrend} />
+        <Route path="/bg4day" component={Bg30DayTrend} />
       </div>
     )
   }

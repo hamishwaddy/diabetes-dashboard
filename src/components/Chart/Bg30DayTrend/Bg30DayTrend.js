@@ -94,8 +94,8 @@ class Bg30DayTrend extends Component {
         <Line
           data={this.state.chartData}
           options={this.state.chartOptions}
-          width="450"
-          height="250" />
+          width={450}
+          height={250} />
       </div >
     )
   }

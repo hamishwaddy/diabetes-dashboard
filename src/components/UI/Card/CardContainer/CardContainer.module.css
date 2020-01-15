@@ -4,6 +4,10 @@
   gap: 32px;
 }
 
+.link {
+  text-decoration: none;
+}
+
 /* @media (maxwidth: 550px) {
   .CardContainer {
     grid-template-columns: 1fr;

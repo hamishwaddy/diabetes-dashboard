@@ -40,7 +40,6 @@ class ChartContainer extends Component {
             <li>
               <NavLink to="/bg24hour">24 HOURS</NavLink>
             </li>         
-            
             <li>
               <NavLink to="/bg2day">2 DAYS</NavLink>
             </li>

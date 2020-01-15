@@ -87,6 +87,7 @@ class Bg3HourTrend extends Component {
   render() {
     return (
       <div className={classes.Chart}>
+        <h5 id="title">3 HOUR TREND</h5>
         <Line
           data={this.state.chartData}
           options={this.state.chartOptions}

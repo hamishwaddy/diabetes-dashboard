@@ -13,7 +13,7 @@ class Bg7DayTrend extends Component {
       baseUrl: 'https://orriebetes.herokuapp.com/api/v1/',
       chartData: {},
       chartOptions: {},
-      chartTitle: '...BG 2 Days...'
+      chartTitle: 'BG VALUES: LAST 2 DAYS'
     }
   }
 
@@ -43,8 +43,8 @@ class Bg7DayTrend extends Component {
           chartData: {
             labels: labels,
             datasets: [{
-              label: 'BG Numbers',
-              backgroundColor: '#ececec',
+              label: 'BG VALUES: LAST 2 DAYS',
+              backgroundColor: '#fff',
               borderColor: '#d4d4d4',
               pointRadius: 1,
               pointBackgroundColor: '#d4d4d4',
@@ -91,11 +91,12 @@ class Bg7DayTrend extends Component {
   render() {
     return (
       <div className={classes.ChartContainer}>
+       {/*<h4>{this.state.chartTitle}</h4>*/}
         <Line
           data={this.state.chartData}
           options={this.state.chartOptions}
-          width="450"
-          height="250" />
+          width={450}
+          height={250} />
       </div>
     );
   }

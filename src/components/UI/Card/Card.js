@@ -1,6 +1,6 @@
-import React from 'react'
-import classes from './Card.module.css'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React from 'react';
+import classes from './Card.module.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Card = (props) => {
   return (

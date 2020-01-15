@@ -1,0 +1,29 @@
+/* .Chart {
+  max-height: 80px;
+  width: 75%;
+} */
+
+/* .Chart canvas {
+  position: relative;
+  padding-left: 32px;
+  padding-right: 16px;
+  padding-top: 44px;
+  justify-self: flex-end;
+} */
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #d4d4d4;
+  line-height: 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 1.5srem;
+  margin-bottom: .5rem;
+}
+

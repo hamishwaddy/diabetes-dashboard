@@ -9,7 +9,9 @@
   padding: 2px;
   margin: 0;
   box-sizing: border-box;
-  min-height: 180px;
+  height: 210px;
+  /* min-height: 180px; */
+  /* max-height: 250px; */
   position: relative;
 }
 

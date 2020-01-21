@@ -16,10 +16,10 @@ class Layout extends Component {
     super(props)
     this.state = {
       showSideDrawer: false,
-      date: moment().format('ll')
+      date: moment().format('ll'),
+      showLoginPage: true
     }
   }
-
 
   sideDrawerClosedHandler = () => {
     this.setState({ showSideDrawer: false })
@@ -28,6 +28,12 @@ class Layout extends Component {
   sideDrawerToggleHandler = () => {
     this.setState((prevState) => {
       return { showSideDrawer: !prevState.showSideDrawer }
+    })
+  }
+
+  hideLoginPage = () => {
+    this.setState({
+      showLoginPage: false
     })
   }
 

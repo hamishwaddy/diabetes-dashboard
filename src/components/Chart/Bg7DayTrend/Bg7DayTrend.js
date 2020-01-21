@@ -86,8 +86,6 @@ class Bg7DayTrend extends Component {
       .catch(err => console.error(err));
   }
 
-
-
   render() {
     return (
       <div className={classes.ChartContainer}>

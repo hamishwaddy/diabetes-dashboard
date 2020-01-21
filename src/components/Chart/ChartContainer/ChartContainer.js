@@ -38,20 +38,20 @@ class ChartContainer extends Component {
         <nav>
           <ul>
             <li>
-              <NavLink to="/bg24hour">24 HOURS</NavLink>
+              <NavLink to="/dash/bg/24hour">24 HOURS</NavLink>
             </li>         
             <li>
-              <NavLink to="/bg2day">2 DAYS</NavLink>
+              <NavLink to="/dash/bg/2day">2 DAYS</NavLink>
             </li>
             <li>
-              <NavLink to="/bg4day">4 DAYS</NavLink>
+              <NavLink to="/dash/bg/4day">4 DAYS</NavLink>
             </li>
           </ul>
         </nav>
-        <Route path="/" exact component={Bg24HourChart} />
-        <Route path="/bg24hour" component={Bg24HourChart} />
-        <Route path="/bg2day" component={Bg7DayTrend} />
-        <Route path="/bg4day" component={Bg30DayTrend} />
+        <Route path="/dash/bg" exact component={Bg24HourChart} />
+        <Route path="/dash/bg/24hour" component={Bg24HourChart} />
+        <Route path="/dash/bg/2day" component={Bg7DayTrend} />
+        <Route path="/dash/bg/4day" component={Bg30DayTrend} />
       </div>
     )
   }

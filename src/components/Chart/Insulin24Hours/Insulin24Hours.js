@@ -11,9 +11,6 @@ class Insulin24Hours extends Component {
     this.state = {
       baseUrl: 'https://orriebetes.herokuapp.com/api/v1/',
       tdd: 0,
-      chartData: {},
-      chartOptions: {},
-      chartTitle: '...Insulin Intake: Last 24 Hours...'
     }
   }
 
@@ -30,14 +27,11 @@ class Insulin24Hours extends Component {
         for (var i = 0; i < res.data.length; i++) {
           tdd += res.data[i].insulin
         }
-        data.push(tdd)
-        console.log("Data " + data)
-      
+        data.push(tdd)      
 
       this.setState({
         tdd: data
       })
-      console.log("TDD" + this.state.tdd)
     })
   }
 

@@ -4,12 +4,13 @@ import classes from './CardContainer.module.css'
 import Card from '../Card'
 import Bg3HourTrend from '../../../Chart/Bg3HourTrend/Bg3HourTrend'
 import Insulin24Hours from '../../../Chart/Insulin24Hours/Insulin24Hours'
+import CarbsLastIntake from '../../../Chart/CarbsLastIntake/CarbsLastIntake'
 
 const CardContainer = (props) => {
   return (
     <div className={classes.CardContainer}>
       <Link 
-        key={props.Id} to={'/'} 
+        key={props.Id} to={'/dash/bg'} 
         className={classes.link}>
         <Card
           Icon="tint"
@@ -19,7 +20,7 @@ const CardContainer = (props) => {
           Id="1" />
       </Link>
       <Link 
-        key={props.Id} to="/insulin"
+        key={props.Id} to="/dash/insulin"
         className={classes.link}>
         <Card
           Icon="syringe"
@@ -29,13 +30,13 @@ const CardContainer = (props) => {
           Id="2" />
       </Link>
       <Link 
-        key={props.id} to="/success"
+        key={props.id} to="/dash/carbs"
         className={classes.link}>
         <Card
-          Icon="check-double"
-          Title="Success"
-          Data="something"
-          Description="some cool data"
+          Icon="pizza-slice"
+          Title="Carbs"
+          Graphic={<CarbsLastIntake />}
+          // Description="some cool data"
           Id="3" />
       </Link>
     </div>

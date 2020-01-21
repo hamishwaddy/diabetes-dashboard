@@ -2,29 +2,59 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import './App.css';
-import Layout from './containers/Layout/Layout'
+
+import Layout from './pages/Layout/Layout'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee, faTint, faSyringe, faCheckDouble, faChartArea } from '@fortawesome/free-solid-svg-icons'
-import Bg24HourChart from './components/Chart/Bg24HourChart';
-import Insulin24Hours from './components/Chart/Insulin24Hours/Insulin24Hours'
-import Auth from './containers/Auth/Auth';
+import { faCheckSquare, faCoffee, faTint, faSyringe, faChartArea, faPizzaSlice } from '@fortawesome/free-solid-svg-icons'
+import SignInSignUpUser from './pages/SignInSignUpUser/SignInSignUpUser';
+import Toolbar from '../src/components/Navigation/Toolbar/Toolbar';
+import { auth } from './firebase/firebase.utils'
 
-library.add(fab, faCheckSquare, faCoffee, faTint, faSyringe, faCheckDouble, faChartArea)
+library.add(
+  fab, 
+  faCheckSquare, 
+  faCoffee, 
+  faTint, 
+  faSyringe, 
+  faChartArea, 
+  faPizzaSlice
+  );
 
 
 class App extends Component {
+constructor() {
+  super();
+
+  this.state = {
+    currentUser: null
+  }
+}
+
+unsubscribeFromAuth = null
+
+componentDidMount() {
+  this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+    this.setState({ currentUser: user })
+
+    console.log(user);
+  })
+}
+
+componentWillUnmount() {
+  this.unsubscribeFromAuth();
+}
+
   render() {
     return (
       <div className="App">
-        <Layout>
-          <Switch>
-            <Route path="/bg" component={Bg24HourChart} />
-            <Route path="/insulin" component={Insulin24Hours} />
-            <Route path="/auth" component={Auth} />
-            <Route path="/" exact component={Bg24HourChart} />
-          </Switch>
-        </Layout>
+        <Toolbar currentUser={this.state.currentUser} />
+        <Switch>
+          <Route path='/signin' component={SignInSignUpUser} />
+          <Route path='/dash' component={Layout} />
+          <Route path='/dash/:id' component={Layout} />
+          <Route path='/' exact component={Layout} />
+        </Switch>
       </div>
     );
   }

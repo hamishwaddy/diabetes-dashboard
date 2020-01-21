@@ -52,6 +52,8 @@ class ChartContainer extends Component {
         <Route path="/dash/bg/24hour" component={Bg24HourChart} />
         <Route path="/dash/bg/2day" component={Bg7DayTrend} />
         <Route path="/dash/bg/4day" component={Bg30DayTrend} />
+        <Route path="/dash/" exact component={Bg24HourChart} />
+        <Route path="/" exact component={Bg24HourChart} />
       </div>
     )
   }

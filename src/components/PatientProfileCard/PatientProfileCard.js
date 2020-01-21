@@ -10,7 +10,7 @@ const PatientProfileCard = (props) => {
         <img src="https://robohash.org/set_set3/bgset_bg1/3.14159?size=200x200" alt="ProfilePicture"></img>
       </div>
       <div>
-        <h4>Patient's name</h4>
+        <h4>Patient Name</h4>
       </div>
       <div>
         <DataSummary />
